@@ -56,3 +56,5 @@ npm install
 ```sh
 npm run dev
 ```
+
+4. Go to [text](http://localhost:3000/login)
