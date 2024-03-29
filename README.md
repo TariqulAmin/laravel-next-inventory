@@ -48,5 +48,5 @@ npm install
 3. Run in development mode
 
 ```sh
-npm start
+npm run dev
 ```
