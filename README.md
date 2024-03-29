@@ -1,10 +1,48 @@
-### Installation
+### Laravel Backend Installation
 
 1. Clone the repo and change the directory
 
 ```sh
-git clone https://github.com/TariqulAmin/track-search-backend.git
-cd track-search-backend
+git clone https://github.com/TariqulAmin/inventory.git
+cd inventory
+```
+
+2. Install all the dependencies using composer
+
+```sh
+composer install
+```
+
+3. Copy the .env.example file and make the required configuration changes in the .env file
+
+```
+cp .env.example .env
+```
+
+4. Generate a new application key
+
+```sh
+php artisan key:generate
+```
+
+5. Run database migrations by running
+
+```sh
+php artisan migrate
+```
+
+6. Start the local development server
+
+```sh
+php artisan serve
+```
+
+### React Frontend Installation
+
+1. Open a new terminal and go to frontend
+
+```sh
+cd frontend
 ```
 
 2. Install NPM packages
@@ -13,20 +51,7 @@ cd track-search-backend
 npm install
 ```
 
-3. Create your .env file on root folder with this content.
-
-```
-APP_NAME=music-search
-PORT=5000
-
-# development, production
-NODE_ENV=development
-
-# DB
-MONGODB_URI=mongodb+srv://sajib:sajib123@cluster0.beib29z.mongodb.net/
-```
-
-4. Run in development mode
+3. Run in development mode
 
 ```sh
 npm run dev
