@@ -25,6 +25,7 @@ cp .env.example .env
 php artisan key:generate
 ```
 
+<<<<<<< HEAD
 5. Run database migrations by running
 
 ```sh
@@ -32,6 +33,9 @@ php artisan migrate
 ```
 
 6. Start the local development server
+=======
+5. Start the local development server
+>>>>>>> f782e2f6c1cc261c674c212682a475116ee56eb2
 
 ```sh
 php artisan serve
