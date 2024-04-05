@@ -45,10 +45,10 @@ php artisan serve
 cd frontend_next
 ```
 
-2. Copy the .env.local file and make the required configuration changes in the .env file
+2. Copy the .env.example file and make the required configuration changes in the .env file
 
 ```
-cp .env.local .env
+cp .env.example .env
 ```
 
 3. Install NPM packages
