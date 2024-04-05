@@ -16,8 +16,9 @@ function InventoryForm() {
     const [errors, setErrors] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    if (id) {
-        useEffect(() => {
+
+    useEffect(() => {
+        if (id) {
             setLoading(true);
             axiosClient
                 .get(`/inventories/${id}`)
@@ -28,8 +29,24 @@ function InventoryForm() {
                 .catch(() => {
                     setLoading(false);
                 });
-        }, []);
-    }
+        }
+    }, [id]);
+
+
+    // if (id) {
+    //     useEffect(() => {
+    //         setLoading(true);
+    //         axiosClient
+    //             .get(`/inventories/${id}`)
+    //             .then(({ data }) => {
+    //                 setLoading(false);
+    //                 setInventory(data.data);
+    //             })
+    //             .catch(() => {
+    //                 setLoading(false);
+    //             });
+    //     }, []);
+    // }
 
     const onSubmit = (ev) => {
         ev.preventDefault();

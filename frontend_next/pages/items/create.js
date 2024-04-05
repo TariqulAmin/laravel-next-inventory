@@ -34,8 +34,9 @@ function ItemForm() {
             });
     }, []);
 
-    if (id) {
-        useEffect(() => {
+
+    useEffect(() => {
+        if (id) {
             setLoading(true);
             axiosClient
                 .get(`/items/${id}`)
@@ -47,8 +48,9 @@ function ItemForm() {
                 .catch(() => {
                     setLoading(false);
                 });
-        }, []);
-    }
+        }
+    }, [id]);
+
 
     const onSubmit = (ev) => {
         ev.preventDefault();
