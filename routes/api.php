@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\InventoryController;
 use App\Http\Controllers\Api\ItemController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,6 +18,7 @@ use App\Http\Controllers\Api\ItemController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', function (Request $request) {

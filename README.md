@@ -3,8 +3,8 @@
 1. Clone the repo and change the directory
 
 ```sh
-git clone https://github.com/TariqulAmin/inventory.git
-cd inventory
+git clone https://github.com/TariqulAmin/laravel-next-inventory.git
+cd laravel-next-inventory
 ```
 
 2. Install all the dependencies using composer
@@ -39,19 +39,25 @@ php artisan serve
 
 ### React Frontend Installation
 
-1. Open a new terminal and go to frontend
+1. Open a new terminal and go to frontend_next
 
 ```sh
-cd frontend
+cd frontend_next
 ```
 
-2. Install NPM packages
+2. Copy the .env.local file and make the required configuration changes in the .env file
+
+```
+cp .env.local .env
+```
+
+3. Install NPM packages
 
 ```sh
 npm install
 ```
 
-3. Run in development mode
+4. Run in development mode
 
 ```sh
 npm run dev

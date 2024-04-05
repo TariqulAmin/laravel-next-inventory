@@ -87,24 +87,24 @@ class ItemController extends BaseController
             return $this->sendError('Validation Error.', $validator->errors());
         }
 
-        $item = Item::find($id);
-        $item->inventory_id = $input['inventory_id'];
-        $item->name = $input['name'];
-        $item->description = $input['description'];
-        $item->quantity = $input['quantity'];
-        $item->save();
-
         if ($file = $request->file('image')) {
-            $itemImage = public_path("item/{$item->image}");
+            $itemImage = public_path("item/{$request->image}");
             if (File::exists($itemImage)) {
                 unlink($itemImage);
             }
             $image = time() . $file->getClientOriginalName();
             $file->move('item', $image);
-            $item->image = $image;
-            $item->save();
+            $input['image'] = $image;
         }
 
+        $item = Item::find($id);
+        $item->inventory_id = $input['inventory_id'];
+        $item->name = $input['name'];
+        $item->description = $input['description'];
+        $item->quantity = $input['quantity'];
+        $item->image = $input['image'];
+        $item->save();
+        
         return $this->sendResponse(new ItemResource($item), 'Item updated successfully.');
     }
 
